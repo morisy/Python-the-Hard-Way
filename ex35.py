@@ -8,7 +8,7 @@ def gold_room():
         how_much = int(next)
     else:
         dead("Man, learn to type a number.")
-    if how)much < 50:
+    if how_much < 50:
         print "Nice, you're not greedy, you win!"
     else:
         dead("You greedy bastard!")
@@ -30,7 +30,7 @@ def bear_room():
             bear_moved = True
         elif next == "taunt bear" and bear_moved:
             dead("The bear gets pissed off and chews your leg off.")
-        elif next == "open door" and bear moved:
+        elif next == "open door" and bear_moved:
             gold_room()
         else:
             print "I got no idea what that means."
