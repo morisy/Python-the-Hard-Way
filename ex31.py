@@ -1,13 +1,14 @@
 print "You enter a dark room with two doors. Do you go through Door #1 or Door #2?"
 
-door = raw_input("> ")
+prompt = "> " 
+door = raw_input(prompt)
 
 if door == "1":
     print "There's a giant bear here eating a cheese cake. What do you do?"
     print "1. Take the cake."
     print "2. Yell at the bear?"
 
-    bear = raw_input("> ")
+    bear = raw_input(prompt)
 
     if bear == "1":
         print "The bear eats your face off. Good job!"
@@ -21,7 +22,7 @@ elif door == "2":
     print "1. Blueberries."
     print "2. Yellow jacket clothespins."
     print "3. Understanding revolvers yelling melodies."
-    insanity = raw_input("> ")
+    insanity = raw_input(prompt)
 
     if insanity == 1 or insanity == 2:
         print "Your body survives powered by a brain of jello."
