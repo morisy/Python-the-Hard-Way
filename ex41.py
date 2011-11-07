@@ -44,7 +44,7 @@ def central_corridor():
 def laser_weapon_armory():
     print "Welcome to the armory."
     print "Guess the 3-digit key code for the bomb!"
-    code = "%d%d%d" % (radint(1,9), radint(1,9), radint(1,9))
+    code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
     guess = raw_input("[keypad]> ")
     guesses = 0
 
