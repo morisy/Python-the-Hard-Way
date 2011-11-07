@@ -63,14 +63,14 @@ def laser_weapon_armory():
         return 'death'
 
 def the_bridge():
-    print "Uh oh, 5 more Gothons are after you."
+    print "Uh oh, 5 more Gothons are after you. Throw or place?"
 
     action = raw_input("> ")
-    if action == "Throw the bomb":
+    if action == "Throw":
         print "In a panic, you throw the bomb ... and it detonates, killing you along with your mortal enemies."
         return 'death'
 
-    elif action == "Slowly place the bomb":
+    elif action == "Place":
         print "Tick tick tick ... You manage to get to the escape bay by freaking them out."
         return 'escape_pod'
     else:
@@ -79,7 +79,7 @@ def the_bridge():
 
 def escape_pod():
     print "You make it to the escape bay, but there's 5 pods to choose from. Which is best?"
-    good_pod = radint(1,5)
+    good_pod = randint(1,5)
     guess = raw_input("[pod #]> ")
 
     if int(guess) != good_pod:
