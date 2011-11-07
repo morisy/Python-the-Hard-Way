@@ -45,6 +45,8 @@ def laser_weapon_armory():
     print "Welcome to the armory."
     print "Guess the 3-digit key code for the bomb!"
     code = "%d%d%d" % (randint(1,9), randint(1,9), randint(1,9))
+    print "A scrap of paper reads \"Don't forget Vontor, the new password"
+    print "is %r (scratched through) " % code[:2]
     guess = raw_input("[keypad]> ")
     guesses = 0
 
@@ -64,7 +66,6 @@ def the_bridge():
     print "Uh oh, 5 more Gothons are after you."
 
     action = raw_input("> ")
-
     if action == "Throw the bomb":
         print "In a panic, you throw the bomb ... and it detonates, killing you along with your mortal enemies."
         return 'death'
