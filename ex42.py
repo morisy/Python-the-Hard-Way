@@ -9,8 +9,8 @@ class Game(object):
                 "Your mom would be proud. If she was smarter.",
                 "Such a luser.",
                 "I have a small puppy that's better at this."
-    ]
-    self.start = start
+        ]
+        self.start = start
 
     def play(self):
         next = self.start
@@ -38,7 +38,7 @@ class Game(object):
 
         action = raw_input("> ")
 
-        if action == "shoot"
+        if action == "shoot":
             print "You put on your John Wayne face, draw your blaster and aim,"
             print "narrowly missing by a hair. Unfortunately, close only"
             print "counts in horseshoes and hand grenades."
