@@ -75,6 +75,11 @@ class Game(object):
         
         while guess != code and guesses < 10:
             print "BZZZD!"
+            if guesses == 3:
+                print "You find a scrap of paper."
+                print "It says, 'Hey Jim, the new code is "
+                print "%s [scratched out]" % code[:2]
+                print "Don't lose it this time!"
             guesses += 1
             guess = raw_input("[keypad]> ")
         
@@ -101,10 +106,10 @@ class Game(object):
             print "shoot you as soon as the bomb leaves your hand."
             return 'death'
 
-        if action == "place":
+        elif action == "place":
             print "Your pysche-out attempt works: They stare at the bomb,"
             print "even as it ticks away. You get away to the escape pod bay."
-            return "the_bridge"
+            return "escape_pod"
 
         else:
             print "DOES NOT COMPUTE!"
