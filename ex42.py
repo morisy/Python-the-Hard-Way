@@ -16,7 +16,7 @@ class Game(object):
         next = self.start
 
         while True:
-            print "n\==========="
+            print "\n==========="
             room = getattr(self, next)
             next = room()
 
