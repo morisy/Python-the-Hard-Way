@@ -1,0 +1,54 @@
+The Pitch
+=========
+
+A cybernovella about getting to the right person with the right idea at the right time.
+
+Lobby
+=====
+
+No receptionist, so the user must guess the right person. A person in a suit, a woman in red, and a punk hax0r all walk by. Which one do you follow? Picking the wrong one takes you to their sub game until you pick the right one.
+
+Failure: Subgame
+Correct: Break Room
+
+Hacker Subgame
+==============
+Success: Back to Lobby
+Failure: Booted Out
+
+Suit Subgame
+============
+Success: Back to Lobby
+Failure: Booted Out
+
+
+Red Subgame
+===========
+Success: Back to Lobby
+Failure: Booted Out
+
+
+Break Room
+==========
+
+Something about choosing the right coffee to wake up.
+Success: Meeting
+Failure: Restroom
+Extreme Failure: Booted Out
+
+Restroom
+========
+
+
+
+Extreme Failure
+===============
+
+Someone yells at you, asking why you're here.
+You Stammer that you're not quite sure, but you were supposed to see ...
+But by then security is escorting you to the curb.
+
+
+Meeting
+=======
+
