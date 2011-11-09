@@ -1,12 +1,16 @@
 The Pitch
 =========
 
-A cybernovella about getting to the right person with the right idea at the right time.
+Welcome to Pitch, a cybernovella about getting to the right person with the right idea at the right time.
 
 Lobby
 =====
 
+"What a morning: Your taxi arrived late, the hotel you stayed at makes the Bates Hotel look like Club Med, and  
+
 No receptionist, so the user must guess the right person. A person in a suit, a woman in red, and a punk hax0r all walk by. Which one do you follow? Picking the wrong one takes you to their sub game until you pick the right one.
+
+The correct choice is completely random.
 
 Failure: Subgame
 Correct: Break Room
@@ -16,10 +20,25 @@ Hacker Subgame
 Success: Back to Lobby
 Failure: Booted Out
 
+He asks you to help test 8 segments of code. A bunch of l33t gibberish is displayed, and you have to get 30% right to go back to the lobby. User types in "Bug" or "Ok" when prompted.
+
 Suit Subgame
 ============
 Success: Back to Lobby
 Failure: Booted Out
+
+The suit asks you to help book reservations at a number of restaurants for a date he has later that evening. The player has to succesfully bribe, flatter or intimidate various venues, with a limited about of cash and charisma on hand.
+
+The player must reserve a place for:
+
+* Cocktails
+* Dinner
+* Dessert
+* Drinks
+* Cigars
+
+For a budget of $300. The player has an option of bribing places if intimidation or flattery don't work.
+
 
 
 Red Subgame
@@ -27,6 +46,7 @@ Red Subgame
 Success: Back to Lobby
 Failure: Booted Out
 
+She's a scheming gossip, and enlists player to get good tid bits. The user must get close to the water cooler to hear good gossip, while not getting caught. User can listen, move closer, move farther, and collect 6 pieces of gossip total.
 
 Break Room
 ==========
@@ -36,9 +56,13 @@ Success: Meeting
 Failure: Restroom
 Extreme Failure: Booted Out
 
+By the time the user actually gets to the right person, they're pretty tired and need some caffiene to wake up. Unfortunately, there's 4 caraffes of coffee: They have to guess which one(s) are caffienated, half-caff and decaf and then drink the equivilent of two cups of regular to wake up enough. Drinking 1 cup of regular means they're awake but have to use the restroom. Drinking less than 1 cup is failure. Users get vague status messages like, "That perked you up somewhat" when they drink different levels of caffiene. Different caraffes have inscrutable names like "Moose Drop Sunrise".
+
+
 Restroom
 ========
 
+I don't know. For the first iteration I think I'm just going to let the user win.
 
 
 Extreme Failure
@@ -52,3 +76,31 @@ But by then security is escorting you to the curb.
 Meeting
 =======
 
+This is what it all comes down to: The big pitch meeting. It's run like a Collectible Card game: You get a slide deck from the start of 7 random slides, and the other person has random counter slides. You have limited amounts of some mana equivilient to play which must be strategically stored up to take them down.
+
+Mana Equivilients:
+Patience: Maybe a timer? Goes down by 1 each time?
+Resolve: When it hits zero, you've made the sale. When yours hits zero, you're out.
+
+
+
+Slides:
+* Current Problem: -1 Resolve.
+* Puppies! Adds 3 patience.
+* Industry Validation. -2 Resolve.
+* Clip Art of guy with thumbs up: +2 Patience.
+* Thanks for your time: Does a finishing blow, but no effect if resolve is over 3.
+* Kittens! Adds 3 patience, -1 resolve.
+* Buzzword Page: -2 Resolve
+* Fancy Transition: +2 Patience + new random slide
+* Video: -1 additional patience + -4 resolve
+* Pricing Page: -1 resolve
+* Flow Chart: -2 resolve
+* Prop: +3 patience
+* Picture of SO: +3 to your own resolve
+
+
+Their powers:
+* Interrupting Phone Call
+* Stumper Question
+* Angry Birds distracts him on his phone
