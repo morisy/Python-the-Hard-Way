@@ -11,8 +11,7 @@ class Game(object):
                 "Buzzwords"
         ]
 
-        self.resolve = 30
-        self.awake = 1
+        self.awake = 10
         self.pee = 0
         self.cash = 200
         self.start = start
@@ -31,9 +30,12 @@ class Game(object):
         exit(1)
 
     def print_status(self):
-        if self.awake >= 10:
+        print "Your awake level is %i." % self.awake
+        print "Your pee level is %i." % self.pee
+        print "You've got $%i left." % self.cash
+        if self.awake >= 20:
             print "You're feeling mighty frisky!"
-        elif self.awake <= 5:
+        elif self.awake <= 15:
             print "You really could use an energy boost."
         else:
             print "You're feeling alright, but not quite 100%"
@@ -109,7 +111,7 @@ class Game(object):
         carafe = {}
         while len(carafe) < carafe_count:
                 carafe[coffee_name_adjective[randint(0,len(coffee_name_adjective)-1)] + " " + coffee_name_noun[randint(0,len(coffee_name_noun) - 1)]] = randint(0,2)
-        print carafe
+        print carafe.keys()
         self.print_status()
         print "Which coffee do you want? (Leave to leave)"
         drink = raw_input("> ")
@@ -121,14 +123,71 @@ class Game(object):
             else:
                 print "That wasn't an option. Try again."
             self.print_status()
-            print "Another cup?"
-            drink = raw_input("> ")
-        return "sale_complete"
+            if self.pee >= 10:
+                return 'restroom'
+            else:
+                print "Another cup?"
+                drink = raw_input("> ")
+        if self.awake >= 20:
+            return "the_pitch"
+        else:
+            print "You're getting sleepy, veery sleepy ..."
+            return 'leave'
 
+    def restroom(self):
+        print "Just couldn't hold it together, huh?"
+        print "You stumble off to the restroom, losing track of the person you came to see."
+        print "When you come back out, it's too late: They're lost in the shuffle."
+        return 'leave'
 
     def sale_complete(self):
         print "Wow, you made the sale! Complete victory."
         exit(1)
 
+    def the_pitch(self):
+        prospect_resolve = 20
+        print "Your prospect comes back to the break room."
+        print "Well, you're looking a bit more up and at 'em"
+        print '"Come in to my office."'
+        print "Here it is, the moment you've been waiting for."
+        print "You look back over at the slides you've been preparing."
+        print "Which one do you want to open with?"
+        while prospect_resolve > 0 and self.awake > 0:
+            if len(self.deck) < 1:
+                print "Oh no, you're out of slides!"
+                print "You stammer for a few minutes, but it's not doing much good."
+                return 'leave' 
+            print "Here are your remaining slides:"
+            print self.deck
+            slide = raw_input("> ")
+
+            if slide in self.deck:
+                print "Yup, you have that slide."
+                self.deck.remove(slide)
+                if slide == "Introduction":
+                    if prospect_resolve == 20:
+                        print "Did 4 damage to Prospect's Resolve! Critical Hit!"
+                        prospect_resolve += -4
+                    else:
+                        print "Did 1 damage to Prospect's Resolve!"
+                        prospect_resolve += -1
+                elif slide == "Problem":
+                    print "Did 2 damage to Prospect's Resolve!"
+                    prospect_resolve += -2
+                elif slide == "Buzzwords":
+                    print "Did 16 damage to Prospect's Resolve!"
+                    prospect_resolve += -16
+                else:
+                    print "Did 1 Damage to Prospect's Resolve!"
+                    prospect_resolve += -1
+                self.awake += -1
+            else:
+                print "Sorry, you don't have that slide."
+            self.print_status()
+            print "Your prospect has %i resolve left" % prospect_resolve
+        if prospect_resolve <= 0:
+            return 'sale_complete'
+        else:
+            return 'leave'
 a_game = Game("lobby")
 a_game.play()
