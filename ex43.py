@@ -25,12 +25,10 @@ class Game(object):
             room = getattr(self, next)
             next = room()
 
-    def death(self):
-        next = self.start
-
-        while True:
-            room = getattr(self, next)
-            next = room()
+    def leave(self):
+        print "You're clearly not cut out for the big leagues."
+        print "Head on home to your lemonade stand and practice."
+        exit(1)
 
     def print_status(self):
         print "You're feeling mighty frisky!"
@@ -46,6 +44,9 @@ class Game(object):
         print "muster to out last the intimidating executive in front of you."
         self.print_status()
         print "Well, hope that's good enough!"
+        return 'leave'
+
+
 
 a_game = Game("lobby")
 a_game.play()
