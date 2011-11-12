@@ -34,9 +34,16 @@ class Game(object):
         print "You're feeling mighty frisky!"
 
     def lobby(self):
+        employees = [
+                "Suit",
+                "Red",
+                "Hacker"
+        ]
+        correct_employee = employees[randint(0,len(employees))]
         print "Here it is, what the long, hellish morning has lead up to:"
         print "Your chance to pitch the buyer, and either make or break"
         print "your company once and for all."
+        print "You're supposed to meet with %s" % correct_employee
         print "Let's take a look at your deck:"
         print self.deck
         print "Not bad, hopefully you can make the sale."
@@ -44,9 +51,25 @@ class Game(object):
         print "muster to out last the intimidating executive in front of you."
         self.print_status()
         print "Well, hope that's good enough!"
-        return 'leave'
-
-
+        print "Now who were you supposed to meet with again?"
+        print "Your phone died last night at the hotel and you're not"
+        print "quite sure. The receptionist is out today, but three"
+        print "employees walk into the lobby, each looking at you expectantly."
+        print "In turn, they are:"
+        employee_count = 0
+        while employee_count < len(employees):
+            print employees[employee_count]
+            employee_count += 1
+        print "Which one do you follow?"
+        action = raw_input("> ")
+        if action == correct_employee:
+            return "sale_complete"
+        else:
+            return "leave"
+        
+    def sale_complete(self):
+        print "Wow, you made the sale! Complete victory."
+        exit(1)
 
 a_game = Game("lobby")
 a_game.play()
