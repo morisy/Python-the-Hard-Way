@@ -31,8 +31,18 @@ class Game(object):
         exit(1)
 
     def print_status(self):
-        print "You're feeling mighty frisky!"
-
+        if self.awake >= 10:
+            print "You're feeling mighty frisky!"
+        elif self.awake <= 5:
+            print "You really could use an energy boost."
+        else:
+            print "You're feeling alright, but not quite 100%"
+        if self.pee >= 10:
+            print "You really have to go!"
+        elif self.pee >= 5:
+            print "You should probably hit the restroom if you get a chance."
+        elif self.pee >= 2:
+            print "You might want to hold off on any more beverages until after the pitch."
     def lobby(self):
         employees = [
                 "Suit",
@@ -74,7 +84,7 @@ class Game(object):
         print "Feeling slightly tired after fending off man-sized bed bugs"
         print "the night before, you gratefully accept."
         print '"Coffee room is over there. Help yourself."'
-        print "You head over into the room and see four pots, all with"
+        print "You head over into the room and see several carafes, all with"
         print "weird, colorful names but no indication of whether they"
         print "are regular, decaf or half-caff. You desperately need"
         print "a pick-me-up, but drinking too much of the wrong coffee"
@@ -95,11 +105,24 @@ class Game(object):
                 "Blend",
                 "Mix",
                 "Brew"]
-        carafe_count = 4
-        carafe = []
+        carafe_count = 5
+        carafe = {}
         while len(carafe) < carafe_count:
-                carafe += [coffee_name_adjective[randint(0,len(coffee_name_adjective)-1)] + " " + coffee_name_noun[randint(0,len(coffee_name_noun) - 1)]]
+                carafe[coffee_name_adjective[randint(0,len(coffee_name_adjective)-1)] + " " + coffee_name_noun[randint(0,len(coffee_name_noun) - 1)]] = randint(0,2)
         print carafe
+        self.print_status()
+        print "Which coffee do you want? (Leave to leave)"
+        drink = raw_input("> ")
+        while drink != "Leave":
+            if drink in carafe:
+                print "Ah, that was tasty!"
+                self.pee += 1
+                self.awake += carafe[drink]
+            else:
+                print "That wasn't an option. Try again."
+            self.print_status()
+            print "Another cup?"
+            drink = raw_input("> ")
         return "sale_complete"
 
 
