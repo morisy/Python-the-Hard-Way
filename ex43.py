@@ -39,7 +39,7 @@ class Game(object):
                 "Red",
                 "Hacker"
         ]
-        correct_employee = employees[randint(0,len(employees))]
+        correct_employee = employees[randint(0,len(employees) - 1)]
         print "Here it is, what the long, hellish morning has lead up to:"
         print "Your chance to pitch the buyer, and either make or break"
         print "your company once and for all."
@@ -63,10 +63,46 @@ class Game(object):
         print "Which one do you follow?"
         action = raw_input("> ")
         if action == correct_employee:
-            return "sale_complete"
+            return "break_room"
         else:
             return "leave"
-        
+
+    def break_room(self):
+        print "Phew, you chose wisely."
+        print "You follow the person you came to see, and they"
+        print "brusquely ask if you want anything to drink. Coffee or tea?"
+        print "Feeling slightly tired after fending off man-sized bed bugs"
+        print "the night before, you gratefully accept."
+        print '"Coffee room is over there. Help yourself."'
+        print "You head over into the room and see four pots, all with"
+        print "weird, colorful names but no indication of whether they"
+        print "are regular, decaf or half-caff. You desperately need"
+        print "a pick-me-up, but drinking too much of the wrong coffee"
+        print "will send you to the restroom faster than you can say"
+        print "America runs on Dunkin'."
+        print "You go to read the labels a little more closely."
+        coffee_name_adjective = [
+                "Mocha",
+                "Iced",
+                "Dark",
+                "Light",
+                "Seasonal",
+                "Gutemalan",
+                "Spiced",
+                "Vanilla"]
+        coffee_name_noun = [
+                "Roast",
+                "Blend",
+                "Mix",
+                "Brew"]
+        carafe_count = 4
+        carafe = []
+        while len(carafe) < carafe_count:
+                carafe += [coffee_name_adjective[randint(0,len(coffee_name_adjective)-1)] + " " + coffee_name_noun[randint(0,len(coffee_name_noun) - 1)]]
+        print carafe
+        return "sale_complete"
+
+
     def sale_complete(self):
         print "Wow, you made the sale! Complete victory."
         exit(1)
