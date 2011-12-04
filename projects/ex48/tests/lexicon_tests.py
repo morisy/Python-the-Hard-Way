@@ -31,7 +31,7 @@ def test_nouns():
 def test_numbers():
     assert_equal(lexicon.scan("1234"), [('number', '1234')])
     result = lexicon.scan("3 91234")
-    assert_equal(result, [('number', ''),
+    assert_equal(result, [('number', '3'),
                           ('number', '91234')])
 
 def test_errors():
