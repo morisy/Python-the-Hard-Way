@@ -6,7 +6,8 @@ def test_peek():
     assert_equal(parser.peek(word_list), 'noun')
 
 def test_match():
-    print "TEAR DOWN!"
+    word_list = [('noun', 'Dog'), ('verb', 'ran'), ('stop', 'to'), ('stop', 'the'), ('noun', 'cow')]
+    assert_equal(parser.match(word_list, 'noun'), ('noun', 'Dog'))
 
 def test_basic():
     print "I RAN!"
